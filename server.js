@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -152,12 +153,9 @@ const data = {
 
 }
 
-app.get("/", (req, res) => res.send("I am Alive"));
+app.get("/", (req, res) => res.send("Sometimes the smallest hello can make the biggest difference."));
 
 app.get('/data/:year', (req, res) => {
-    req.params;
-    // res.json(data2023.map(([occupation, salary]) => ({ occupation, salary })));
-    // res.json(req.params.year);
     try {
         res.json(data[req.params.year].map(([occupation, salary]) => ({ occupation, salary })))
     }
