@@ -1,0 +1,9 @@
+{
+    "json.format.enable": true,
+    "json.schemas": [
+
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
