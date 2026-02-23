@@ -9,7 +9,16 @@ app.use(cors());
 // Health check / Root
 app.get("/", (req, res) => res.send("Sometimes the smallest hello can make the biggest difference."));
 
-// Data Route
+// Data Route - Get most recent year
+app.get('/data', (req, res) => {
+    const years = Object.keys(data).map(Number).sort((a, b) => b - a);
+    const mostRecentYear = years[0];
+    const yearData = data[mostRecentYear];
+
+    res.json(yearData);
+});
+
+// Data Route - Get specific year
 app.get('/data/:year', (req, res) => {
     const yearData = data[req.params.year];
 
